@@ -17,11 +17,44 @@
         .container {
           width: 600px;
         }
+        img {
+          width: auto;
+        }
+        .left-content {
+          width: 100%;
+        }
+        .middle-content {
+          width: 100%;
+          text-align: center;
+        }
+
+        .right-content {
+          width: 100%;
+          text-align: center;
+        }
+        ul {
+          margin: 0;
+        }
       }
 
       @media only screen and (max-width: 600px) {
+        img {
+          width: auto;
+        }
         .left-content {
           width: 100%;
+        }
+        .middle-content {
+          width: 100%;
+          text-align: center;
+        }
+
+        .right-content {
+          width: 100%;
+          text-align: center;
+        }
+        ul {
+          margin: 0;
         }
       }
     </style>
@@ -32,7 +65,7 @@
       class="container"
       cellspacing="0"
       cellpadding="0"
-      border="1"
+      border="0"
       align="center"
       width="600"
     >
@@ -49,7 +82,7 @@
             <tr>
               <td>
                 <img
-                  src="./public/assets/images/female.jpg"
+                  src="./public/assets/images/thinkful.jpg"
                   alt="female image"
                   style="width: 100%;"
                 />
@@ -100,7 +133,7 @@
                   </p>
                   <p style="font-size: 16px; margin: 5px 0;">
                     <span style="font-weight: 900;">Scholarships:</span>
-                    Self-identifying woemns and US military members...<span
+                    Self-identifying womens and US military members...<span
                       ><a
                         href="https://thinkful.com/"
                         style="font-size: 16px; color: orangered; text-decoration: none;"
@@ -123,7 +156,9 @@
           >
             <tr>
               <td>
-                <ul style="padding: 0; list-style: none; background: #cccccc;">
+                <ul
+                  style="padding: 10px; margin: 0; list-style: none; background: #cccccc;"
+                >
                   <li>Avaiable Online</li>
                   <li>Verified Outcomes</li>
                   <li>Flexible Classes</li>
