@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic Layout Website</title>
+    <link rel="stylesheet" href="/public/assets/styles/main.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <header>
+          <img src="assets/images/logo.svg" alt="logo icon" class="logo" />
+
+          <nav>
+            <a href="#" class="hide-desktop">
+              <img
+                src="assets/images/ham.svg"
+                alt="toggle icon"
+                class="menu"
+                id="menu"
+              />
+            </a>
+
+            <ul class="show-desktop hide-mobile" id="nav">
+              <li id="exit" class="exit-btn hide-desktop">
+                <img src="assets/images/exit.svg" alt="exit icon" />
+              </li>
+              <li><a href="#">home</a></li>
+              <li><a href="#">services</a></li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#contact">contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <article>
+          <img
+            src="assets/images/server.svg"
+            alt="server graphic"
+            class="server"
+          />
+          <h1>Web Hosting for the Modern Era</h1>
+          <p class="subhead">Go serverlesss and pay only for what you use.</p>
+
+          <img
+            src="assets/images/scroll.svg"
+            alt="scroll down"
+            class="scroll hide-mobile show-desktop"
+          />
+        </article>
+      </section>
+
+      <section class="blue-container">
+        <div class="container">
+          <ul>
+            <li>
+              <img src="assets/images/icon-1.svg" alt="calendar icon" />
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Possimus eaque ullam, necessitatibus quo expedita temporibus
+                beatae accusantium maxime velit sunt.
+              </p>
+            </li>
+            <li>
+              <img src="assets/images/icon-2.svg" alt="calendar icon" />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis ratione, iure ut inventore quo eveniet maxime placeat
+                itaque aspernatur quis, culpa molestias architecto consequatur
+                expedita facere earum et ad ducimus.
+              </p>
+            </li>
+            <li>
+              <img src="assets/images/icon-3.svg" alt="calendar icon" />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                laborum in ut? Perspiciatis harum nam rerum est blanditiis omnis
+                cupiditate reprehenderit. Iure atque quaerat rem itaque nisi
+                quod nihil quae?
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="gray-container">
+        <div class="container">
+          <ul>
+            <li>
+              <figure>
+                <img
+                  src="assets/images/user1.png"
+                  alt="User testimonial picture"
+                />
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eius, velit!
+                </blockquote>
+                <figcaption>- Jane Doe</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img
+                  src="assets/images/user2.png"
+                  alt="User tesimonial picture"
+                />
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellat totam quae dolor doloremque quo assumenda magnam
+                  voluptatibus ratione libero quos!
+                </blockquote>
+                <figcaption>- John Doe</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Start your free trial now!</h2>
+        <a href="#" class="cta">Get Started</a>
+      </section>
+
+      <footer>
+        <div class="footer-container">
+          <div class="container">
+            <a href="#">
+              <img src="assets/images/logo-white.svg" alt="logo" class="logo" />
+            </a>
+            <p class="address">Melrose Place, 90210<br />USA</p>
+            <ul class="footer-links">
+              <li><a href="#">Terms Of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      let menu = document.getElementbyId("menu");
+      let nav = document.getElementById("nav");
+      let exit = document.getElementById("exit");
+
+      menu.addEventListener("click", function(event) {
+        nav.classList.toggle("hide-mobile");
+        event.preventDefault();
+      });
+
+      exit.addEventListener("click", function(event) {
+        nav.classList.add("hide-mobile");
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

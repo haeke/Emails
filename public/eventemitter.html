@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Event Emitter</title>
+  </head>
+  <script type="text/javascript">
+    const emitOn = state => ({
+      on() {
+        console.log("on");
+      }
+    });
+
+    const emitOff = state => ({
+      off() {
+        console.log("off");
+      }
+    });
+
+    const emitOnce = state => ({
+      once() {
+        console.log("once");
+      }
+    });
+
+    const emitters = state => ({
+      emit() {
+        console.log("emit");
+      }
+    });
+
+    function Emitter() {
+      let events = {};
+
+      return Object.assign(
+        events,
+        emitOn(events),
+        emitOff(events),
+        emitOnce(events),
+        emitters(events)
+      );
+    }
+
+    // create an instance of the emitter function
+    let eventEmitter = new Emitter();
+    eventEmitter.on();
+    eventEmitter.off();
+    eventEmitter.emit();
+    eventEmitter.once();
+  </script>
+  <body>
+    <h1>event emitter - press f12 to open the console</h1>
+  </body>
+</html>
