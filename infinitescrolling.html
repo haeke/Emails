@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Infinite Scrolling</title>
+    <style>
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 960px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <img src="http://api.adorable.io/avatars/123" />
+    </div>
+  </body>
+  <script>
+    // Implement an infinite scrolling page that will add images to the page when a user scrolls down the page a certain distance.
+    // 1. Create a function that will get the height of the document
+    function getDocumentHeight() {
+      // store the document body
+      const body = document.body;
+      // get a reference to the html element
+      const html = document.documentElement;
+      // return the largest body or html element. We use the Math.max function to return the largest element. The elements that we want to check are the
+      // body.scrollHeight
+      // body.offsetHeight
+      // html.clientHeight
+      // html.scrollHeight
+      // html.offsetHeight
+
+      let largest = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      );
+      return largest;
+    }
+
+    function getScrollTop() {
+      return window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (document.Element || document.body.parentNode || document.body)
+            .scrollTop;
+    }
+
+    function getImages() {
+      console.log("called get images");
+      // get the container element
+      let container = document.getElementById("container");
+      for (let i = 0; i < 20; i++) {
+        container.innerHTML += `<img src="http://api.adorable.io/avatars/123" />`;
+      }
+
+      return container;
+    }
+
+    window.addEventListener("scroll", event => {
+      console.log(
+        "called scoll event on window",
+        getDocumentHeight() - window.innerHeight
+      );
+      console.log("scroll top value ", getScrollTop());
+      // check if the scrollTop is smaller than the documentHeight offset by the windows innerheight
+      if (getScrollTop() < getDocumentHeight() - window.innerHeight) return;
+
+      getImages();
+    });
+  </script>
+</html>

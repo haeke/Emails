@@ -8,8 +8,13 @@
   </head>
   <script type="text/javascript">
     const emitOn = state => ({
-      on() {
-        console.log("on");
+      on(event, listener) {
+        if (typeof state[event] !== "object") {
+          state[event] = [];
+        }
+        state[event].push(listener);
+        console.log(state[event]);
+        return () => off(state, listener);
       }
     });
 
@@ -43,9 +48,13 @@
       );
     }
 
+    function eventResponse() {
+      console.log("event response");
+    }
+
     // create an instance of the emitter function
     let eventEmitter = new Emitter();
-    eventEmitter.on();
+    eventEmitter.on("on", eventResponse);
     eventEmitter.off();
     eventEmitter.emit();
     eventEmitter.once();
