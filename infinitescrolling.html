@@ -22,9 +22,7 @@
     </style>
   </head>
   <body>
-    <div id="container">
-      <img src="http://api.adorable.io/avatars/123" />
-    </div>
+    <div id="container"></div>
   </body>
   <script>
     // Implement an infinite scrolling page that will add images to the page when a user scrolls down the page a certain distance.
@@ -34,21 +32,7 @@
       const body = document.body;
       // get a reference to the html element
       const html = document.documentElement;
-      // return the largest body or html element. We use the Math.max function to return the largest element. The elements that we want to check are the
-      // body.scrollHeight
-      // body.offsetHeight
-      // html.clientHeight
-      // html.scrollHeight
-      // html.offsetHeight
-
-      let largest = Math.max(
-        body.scrollHeight,
-        body.offsetHeight,
-        html.clientHeight,
-        html.scrollHeight,
-        html.offsetHeight
-      );
-      return largest;
+      return html.scrollHeight;
     }
 
     function getScrollTop() {
@@ -59,25 +43,24 @@
     }
 
     function getImages() {
-      console.log("called get images");
       // get the container element
       let container = document.getElementById("container");
+
       for (let i = 0; i < 20; i++) {
-        container.innerHTML += `<img src="http://api.adorable.io/avatars/123" />`;
+        container.innerHTML += `<img src="http://api.adorable.io/avatars/123/${i}"  />`;
       }
 
       return container;
     }
+    // call the getImages function once when the document has loaded.
+    document.addEventListener("DOMContentLoaded", event => {
+      getImages();
+    });
 
     window.addEventListener("scroll", event => {
-      console.log(
-        "called scoll event on window",
-        getDocumentHeight() - window.innerHeight
-      );
-      console.log("scroll top value ", getScrollTop());
       // check if the scrollTop is smaller than the documentHeight offset by the windows innerheight
       if (getScrollTop() < getDocumentHeight() - window.innerHeight) return;
-
+      // call get images
       getImages();
     });
   </script>
