@@ -30,3 +30,32 @@ node.add("c");
 console.log(node.children);
 console.log(node.children[1]);
 node.children[1].add("c");
+console.log(node.children);
+console.log(node.children[1].children[0].children);
+
+// Create a Tree class - will contain methods for Depth First Search and Depth First Search traversal methods.
+
+class Tree {
+  // when an instance of the Tree class is created the root should be set to null.
+  constructor() {
+    this.root = null;
+  }
+  traverseBF(callback) {
+    // create an array consisting of the root node object
+    const arr = [this.root];
+    while (arr.length) {
+      // use the shift method to remove the first element in the arr
+      const node = arr.shift();
+      // take every child inside of the node array and push it onto the arr object
+      arr.push(...node.children);
+      // the iterator function
+      callback(node);
+    }
+  }
+}
+
+// Example of creating a Node and setting the root node of the Tree class to the Node object.
+const testNode = new Node(1);
+const testTree = new Tree();
+testTree.root = testNode;
+console.log(testTree.root);
