@@ -52,6 +52,18 @@ class Tree {
       callback(node);
     }
   }
+
+  traverseDF(callback) {
+    const arr = [this.root];
+    while (arr.length) {
+      // use the shift method to remove the element from the arr
+      const node = arr.shift();
+      // take every child inside of the node array and add it to the front of the array using unshift
+      arr.unshift(...node.children);
+      // the iterator function
+      callback(node);
+    }
+  }
 }
 
 // Example of creating a Node and setting the root node of the Tree class to the Node object.
