@@ -1,0 +1,24 @@
+/* BEM - Block Element Modifier */
+
+.inline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* define an element */
+.inline-list__item {
+  display: inline-block;
+  font-size: 50px;
+}
+
+/* avatar block */
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.avatar__image {
+  width: 100%;
+  height: auto;
+}
