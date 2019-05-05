@@ -126,6 +126,43 @@ ul {
   width: 100%;
 }
 
+.projectsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsHeader {
+  color: var(--bodyTextColor);
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.projectDescription {
+  margin: 20px 0;
+}
+
+.projectArticle {
+  display: flex;
+  margin: 20px 20px;
+}
+
+.projectImage {
+  flex: 1;
+  border-radius: 4px;
+  margin-right: 20px;
+  box-shadow: 2px 2px 2px #ccc;
+}
+
+.projectInfo {
+  flex: 1;
+}
+
+.projectLink {
+  color: var(--blueLink);
+  margin: 20px 0;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 800px) {
   .aboutSection {
     display: block;
