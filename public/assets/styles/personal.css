@@ -66,6 +66,7 @@ ul {
 
 .aboutSection {
   display: flex;
+  margin: 40px 0;
 }
 
 .aboutMe {
@@ -119,4 +120,18 @@ ul {
 .footerLink:hover {
   color: var(--footerLinkHover);
   cursor: pointer;
+}
+
+.person {
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .aboutSection {
+    display: block;
+  }
+
+  .headerLinks {
+    font-size: 0.8rem;
+  }
 }
